@@ -1,8 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q3I-gA-Dbr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--UFO Sightings-->
+        <scene sceneID="rff-AS-57d">
+            <objects>
+                <viewController id="bzV-Hs-33g" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="02D-dh-PM9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="U9M-vq-zMz">
+                                <rect key="frame" x="25" y="152" width="364" height="32"/>
+                                <segments>
+                                    <segment title="Strange Flyers"/>
+                                    <segment title="Mysterious Lights"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nBj-Ot-g5z">
+                                <rect key="frame" x="0.0" y="195" width="414" height="701"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pfl-Ul-Ql4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="nBj-Ot-g5z" secondAttribute="bottom" id="2Mb-n5-oa2"/>
+                            <constraint firstItem="U9M-vq-zMz" firstAttribute="leading" secondItem="pfl-Ul-Ql4" secondAttribute="leading" constant="25" id="BxB-vU-bNc"/>
+                            <constraint firstItem="pfl-Ul-Ql4" firstAttribute="trailing" secondItem="U9M-vq-zMz" secondAttribute="trailing" constant="25" id="Hmd-pc-Nkp"/>
+                            <constraint firstItem="nBj-Ot-g5z" firstAttribute="top" secondItem="U9M-vq-zMz" secondAttribute="bottom" constant="12" id="oQX-4Y-4la"/>
+                            <constraint firstItem="nBj-Ot-g5z" firstAttribute="leading" secondItem="pfl-Ul-Ql4" secondAttribute="leading" id="qhY-Kl-af9"/>
+                            <constraint firstItem="pfl-Ul-Ql4" firstAttribute="trailing" secondItem="nBj-Ot-g5z" secondAttribute="trailing" id="sMu-M2-883"/>
+                            <constraint firstItem="U9M-vq-zMz" firstAttribute="top" secondItem="pfl-Ul-Ql4" secondAttribute="top" constant="12" id="zVO-Aa-Z2F"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="UFO Sightings" id="X5g-5b-u9c">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="7pV-Ol-qCG"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2bE-Ec-BEy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="997.10144927536237" y="75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Z24-cO-tS4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q3I-gA-Dbr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Wiq-v9-2Uy">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bzV-Hs-33g" kind="relationship" relationship="rootViewController" id="efa-9W-ztu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nku-XE-J2d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="274" y="75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
