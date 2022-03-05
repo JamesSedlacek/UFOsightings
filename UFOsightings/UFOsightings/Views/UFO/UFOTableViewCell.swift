@@ -9,6 +9,14 @@ import UIKit
 
 class UFOTableViewCell: UITableViewCell {
 
+    // MARK: Outlets
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var speedLabel: UILabel!
+    @IBOutlet weak var ufoTypeLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var ufoImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
