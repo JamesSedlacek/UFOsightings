@@ -16,6 +16,8 @@
 		86F1181027D41BCE00DAF99B /* UFOsightingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1180F27D41BCE00DAF99B /* UFOsightingsUITests.swift */; };
 		86F1181227D41BCE00DAF99B /* UFOsightingsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1181127D41BCE00DAF99B /* UFOsightingsUITestsLaunchTests.swift */; };
 		86F1182527D41ED400DAF99B /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1182427D41ED400DAF99B /* MainVC.swift */; };
+		86F1182C27D421F500DAF99B /* UFOTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1182A27D421F500DAF99B /* UFOTableViewCell.swift */; };
+		86F1182D27D421F500DAF99B /* UFOTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86F1182B27D421F500DAF99B /* UFOTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		86F1180F27D41BCE00DAF99B /* UFOsightingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFOsightingsUITests.swift; sourceTree = "<group>"; };
 		86F1181127D41BCE00DAF99B /* UFOsightingsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFOsightingsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		86F1182427D41ED400DAF99B /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		86F1182A27D421F500DAF99B /* UFOTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFOTableViewCell.swift; sourceTree = "<group>"; };
+		86F1182B27D421F500DAF99B /* UFOTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UFOTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,9 +158,9 @@
 		86F1182127D41CCB00DAF99B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				86F117F927D41BCE00DAF99B /* LaunchScreen.storyboard */,
-				86F117F427D41BCC00DAF99B /* Main.storyboard */,
-				86F1182427D41ED400DAF99B /* MainVC.swift */,
+				86F1182827D4218800DAF99B /* UFO */,
+				86F1182727D4217D00DAF99B /* Splash */,
+				86F1182627D4217600DAF99B /* Main */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +177,32 @@
 			children = (
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		86F1182627D4217600DAF99B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				86F117F427D41BCC00DAF99B /* Main.storyboard */,
+				86F1182427D41ED400DAF99B /* MainVC.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		86F1182727D4217D00DAF99B /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				86F117F927D41BCE00DAF99B /* LaunchScreen.storyboard */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		86F1182827D4218800DAF99B /* UFO */ = {
+			isa = PBXGroup;
+			children = (
+				86F1182A27D421F500DAF99B /* UFOTableViewCell.swift */,
+				86F1182B27D421F500DAF99B /* UFOTableViewCell.xib */,
+			);
+			path = UFO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +311,7 @@
 			files = (
 				86F117FB27D41BCE00DAF99B /* LaunchScreen.storyboard in Resources */,
 				86F117F827D41BCE00DAF99B /* Assets.xcassets in Resources */,
+				86F1182D27D421F500DAF99B /* UFOTableViewCell.xib in Resources */,
 				86F117F627D41BCC00DAF99B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +339,7 @@
 			files = (
 				86F117EF27D41BCC00DAF99B /* AppDelegate.swift in Sources */,
 				86F1182527D41ED400DAF99B /* MainVC.swift in Sources */,
+				86F1182C27D421F500DAF99B /* UFOTableViewCell.swift in Sources */,
 				86F117F127D41BCC00DAF99B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
