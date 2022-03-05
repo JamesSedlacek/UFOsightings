@@ -19,6 +19,7 @@
 		86F1182C27D421F500DAF99B /* UFOTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1182A27D421F500DAF99B /* UFOTableViewCell.swift */; };
 		86F1182D27D421F500DAF99B /* UFOTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86F1182B27D421F500DAF99B /* UFOTableViewCell.xib */; };
 		86F1182F27D4255A00DAF99B /* UFOSighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1182E27D4255A00DAF99B /* UFOSighting.swift */; };
+		86F1183127D426F100DAF99B /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1183027D426F000DAF99B /* NetworkingManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		86F1182A27D421F500DAF99B /* UFOTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFOTableViewCell.swift; sourceTree = "<group>"; };
 		86F1182B27D421F500DAF99B /* UFOTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UFOTableViewCell.xib; sourceTree = "<group>"; };
 		86F1182E27D4255A00DAF99B /* UFOSighting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFOSighting.swift; sourceTree = "<group>"; };
+		86F1183027D426F000DAF99B /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 		86F1181F27D41CBC00DAF99B /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				86F1183027D426F000DAF99B /* NetworkingManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				86F117EF27D41BCC00DAF99B /* AppDelegate.swift in Sources */,
 				86F1182F27D4255A00DAF99B /* UFOSighting.swift in Sources */,
 				86F1182527D41ED400DAF99B /* MainVC.swift in Sources */,
+				86F1183127D426F100DAF99B /* NetworkingManager.swift in Sources */,
 				86F1182C27D421F500DAF99B /* UFOTableViewCell.swift in Sources */,
 				86F117F127D41BCC00DAF99B /* SceneDelegate.swift in Sources */,
 			);
