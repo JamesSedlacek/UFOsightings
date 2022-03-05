@@ -15,6 +15,7 @@
 		86F1180627D41BCE00DAF99B /* UFOsightingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1180527D41BCE00DAF99B /* UFOsightingsTests.swift */; };
 		86F1181027D41BCE00DAF99B /* UFOsightingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1180F27D41BCE00DAF99B /* UFOsightingsUITests.swift */; };
 		86F1181227D41BCE00DAF99B /* UFOsightingsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1181127D41BCE00DAF99B /* UFOsightingsUITestsLaunchTests.swift */; };
+		86F1182527D41ED400DAF99B /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1182427D41ED400DAF99B /* MainVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		86F1180B27D41BCE00DAF99B /* UFOsightingsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UFOsightingsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F1180F27D41BCE00DAF99B /* UFOsightingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFOsightingsUITests.swift; sourceTree = "<group>"; };
 		86F1181127D41BCE00DAF99B /* UFOsightingsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFOsightingsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		86F1182427D41ED400DAF99B /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 			children = (
 				86F117F927D41BCE00DAF99B /* LaunchScreen.storyboard */,
 				86F117F427D41BCC00DAF99B /* Main.storyboard */,
+				86F1182427D41ED400DAF99B /* MainVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86F117EF27D41BCC00DAF99B /* AppDelegate.swift in Sources */,
+				86F1182527D41ED400DAF99B /* MainVC.swift in Sources */,
 				86F117F127D41BCC00DAF99B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

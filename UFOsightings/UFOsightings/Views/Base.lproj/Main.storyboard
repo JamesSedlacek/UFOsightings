@@ -12,7 +12,7 @@
         <!--UFO Sightings-->
         <scene sceneID="rff-AS-57d">
             <objects>
-                <viewController id="bzV-Hs-33g" sceneMemberID="viewController">
+                <viewController id="bzV-Hs-33g" customClass="MainVC" customModule="UFOsightings" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="02D-dh-PM9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,6 +23,9 @@
                                     <segment title="Strange Flyers"/>
                                     <segment title="Mysterious Lights"/>
                                 </segments>
+                                <connections>
+                                    <action selector="tabChanged:" destination="bzV-Hs-33g" eventType="valueChanged" id="SYx-Mn-gcq"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nBj-Ot-g5z">
                                 <rect key="frame" x="0.0" y="195" width="414" height="701"/>
@@ -44,8 +47,14 @@
                     <navigationItem key="navigationItem" title="UFO Sightings" id="X5g-5b-u9c">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="7pV-Ol-qCG">
                             <color key="tintColor" name="AccentColor"/>
+                            <connections>
+                                <action selector="plusTapped:" destination="bzV-Hs-33g" id="4P5-id-rRq"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="nBj-Ot-g5z" id="vE5-br-Ay7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bE-Ec-BEy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
