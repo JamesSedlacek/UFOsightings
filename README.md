@@ -47,3 +47,4 @@ records are fetched from a web service.
 <hr>
 
 ## Design
+<img src="https://github.com/JamesSedlacek/UFOsightings/blob/main/Images/Design.png?raw=true">
