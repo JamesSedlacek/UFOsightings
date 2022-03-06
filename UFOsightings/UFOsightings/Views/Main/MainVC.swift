@@ -24,7 +24,7 @@ class MainVC: UIViewController {
     
     // MARK: Outlets
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var tableView: UITableView!
     
     // MARK: Actions
     
