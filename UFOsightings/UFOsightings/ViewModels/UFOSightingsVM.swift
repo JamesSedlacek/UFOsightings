@@ -10,16 +10,58 @@ import UIKit
 class UFOSightingsVM {
     
     // MARK: Properties
-    private var ufoSightings: [UFOSighting] = []
     
-    public lazy var numberOfRows = {
-        return self.ufoSightings.count
+    private var currentTab: TabOption = .strangeFlyers
+    
+    private var strangeFlyers: [UFOSighting] = []
+    private var mysteriousLights: [UFOSighting] = []
+    private var ufoSightings: [UFOSighting] = [] {
+        didSet {
+            guard let reloadTableViewClosure = reloadTableViewClosure else { return }
+            
+            strangeFlyers = ufoSightings.filter({ $0.type == UFOSightingType.lampshade.rawValue ||
+                $0.type == UFOSightingType.blob.rawValue })
+            
+            mysteriousLights = ufoSightings.filter({ $0.type == UFOSightingType.mysteriousLights.rawValue })
+            
+            reloadTableViewClosure()
+        }
     }
+    
+    private var currentTabSightings: [UFOSighting] {
+        switch currentTab {
+        case .strangeFlyers:
+            return strangeFlyers
+        case .mysteriousLights:
+            return mysteriousLights
+        }
+    }
+    
+    public var numberOfRows: Int {
+        return currentTabSightings.count
+    }
+    
+    public var reloadTableViewClosure: (()->())?
     
     // MARK: Initializers
     
     init() {
-        NetworkingManager.fetchUFOSightings(completion: { result in
+        
+    }
+    
+    // MARK: Update Tab
+    
+    public func updateTab(to option: TabOption) {
+        currentTab = option
+        if let reloadTableViewClosure = reloadTableViewClosure {
+            reloadTableViewClosure()
+        }
+    }
+    
+    // MARK: Fetch
+    
+    public func fetchSightings() {
+        NetworkingManager.fetchUFOSightings(completion: { [unowned self] result in
             switch result {
             case .success(let sightings):
                 self.ufoSightings = sightings
@@ -32,19 +74,23 @@ class UFOSightingsVM {
     // MARK: Getters
     
     public func getDate(for row: Int) -> String {
-        return "" // TODO: format the date for ufoSightings[row].date
+        return "January 25, 2020" // TODO: format the date for ufoSightings[row].date
     }
     
     public func getTime(for row: Int) -> String {
-        return "" // TODO: format the time for ufoSightings[row].time
+        return "7:30AM" // TODO: format the time for ufoSightings[row].time
     }
     
     public func getType(for row: Int) -> UFOSightingType {
-        return UFOSightingType(rawValue: ufoSightings[row].type) ?? .blob
+        let typeText = currentTabSightings[row].type
+        if let type = UFOSightingType(rawValue: typeText) {
+            return type
+        }
+        return .mysteriousLights
     }
     
     public func getSpeed(for row: Int) -> String {
-        return "\(ufoSightings[row].speed) knots"
+        return "\(currentTabSightings[row].speed) knots"
     }
     
     public func getImage(for row: Int) -> UIImage {
@@ -61,5 +107,24 @@ class UFOSightingsVM {
         }
         
         return image
+    }
+    
+    // MARK: Append
+    
+    public func appendRandom() {
+        let newSighting = UFOSighting(id: UUID().uuidString,
+                                      speed: Double(Int.random(in: 5..<30)),
+                                      type: currentTab == .mysteriousLights ? "mysteriousLights" : "blob",
+                                      time: 1481721300)
+        ufoSightings.append(newSighting)
+    }
+    
+    // MARK: Delete
+    
+    public func delete(at row: Int) {
+        let id = currentTabSightings[row].id
+        if let index = ufoSightings.firstIndex(where: { $0.id == id }) {
+            ufoSightings.remove(at: index)
+        }
     }
 }
