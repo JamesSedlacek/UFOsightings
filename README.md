@@ -3,7 +3,7 @@
 <div>
   <h2>Table of Contents</h2>
   <ul>
-    <li><a href="https://github.com/JamesSedlacek/UFOsightings#demovideo">Demo Video</a></li>
+    <li><a href="https://github.com/JamesSedlacek/UFOsightings#demo-video">Demo Video</a></li>
     <li><a href="https://github.com/JamesSedlacek/UFOsightings#description">Description</a></li>
     <li><a href="https://github.com/JamesSedlacek/UFOsightings#requirements">Requirements</a></li>
     <li><a href="https://github.com/JamesSedlacek/UFOsightings#design">Design</a></li>
