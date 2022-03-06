@@ -74,11 +74,11 @@ class UFOSightingsVM {
     // MARK: Getters
     
     public func getDate(for row: Int) -> String {
-        return "January 25, 2020" // TODO: format the date for ufoSightings[row].date
+        return DateFormatting.getDate(from: ufoSightings[row].time)
     }
     
     public func getTime(for row: Int) -> String {
-        return "7:30AM" // TODO: format the time for ufoSightings[row].time
+        return DateFormatting.getTime(from: ufoSightings[row].time)
     }
     
     public func getType(for row: Int) -> UFOSightingType {
@@ -107,7 +107,7 @@ class UFOSightingsVM {
         let newSighting = UFOSighting(id: UUID().uuidString,
                                       speed: Double(Int.random(in: 5..<30)),
                                       type: currentTab == .mysteriousLights ? "mysteriousLights" : "blob",
-                                      time: 1481721300)
+                                      time: Double.random(in: 1643921558..<500000000000))
         ufoSightings.append(newSighting)
     }
     

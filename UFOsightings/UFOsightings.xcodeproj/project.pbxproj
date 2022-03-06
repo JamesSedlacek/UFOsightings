@@ -21,6 +21,7 @@
 		86F1182F27D4255A00DAF99B /* UFOSighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1182E27D4255A00DAF99B /* UFOSighting.swift */; };
 		86F1183127D426F100DAF99B /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1183027D426F000DAF99B /* NetworkingManager.swift */; };
 		86F1183327D4296200DAF99B /* UFOSightingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1183227D4296200DAF99B /* UFOSightingsVM.swift */; };
+		86F1183527D51AB300DAF99B /* DateFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1183427D51AB300DAF99B /* DateFormatting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		86F1182E27D4255A00DAF99B /* UFOSighting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFOSighting.swift; sourceTree = "<group>"; };
 		86F1183027D426F000DAF99B /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		86F1183227D4296200DAF99B /* UFOSightingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFOSightingsVM.swift; sourceTree = "<group>"; };
+		86F1183427D51AB300DAF99B /* DateFormatting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 		86F1182327D41CE300DAF99B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				86F1183427D51AB300DAF99B /* DateFormatting.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86F1183527D51AB300DAF99B /* DateFormatting.swift in Sources */,
 				86F117EF27D41BCC00DAF99B /* AppDelegate.swift in Sources */,
 				86F1182F27D4255A00DAF99B /* UFOSighting.swift in Sources */,
 				86F1182527D41ED400DAF99B /* MainVC.swift in Sources */,

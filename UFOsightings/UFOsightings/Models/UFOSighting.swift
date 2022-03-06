@@ -11,7 +11,7 @@ struct UFOSighting: Codable {
     let id: String // Unique identifier 
     let speed: Double // Measured in Knots
     let type: String // (blob, lampshade, mysteriousLights)
-    let time: Int // timeIntervalSince1970
+    let time: Double // timeIntervalSince1970
 }
 
 enum UFOSightingType: Int, CaseIterable {
