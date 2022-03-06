@@ -10,7 +10,8 @@ import UIKit
 // MARK: TabOption
 
 enum TabOption: Int {
-    case strangeFlyers = 0, mysteriousLights
+    case strangeFlyers = 0
+    case mysteriousLights = 1
 }
 
 // MARK: MainVC
@@ -19,8 +20,8 @@ class MainVC: UIViewController {
 
     // MARK: Properties
     
-    fileprivate var ufoVM = UFOSightingsVM()
-    fileprivate let nibIdentifier = "UFOTableViewCell"
+    private var ufoVM = UFOSightingsVM()
+    private let nibIdentifier = "UFOTableViewCell"
     
     // MARK: Outlets
     
@@ -79,17 +80,13 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.dateLabel.text = ufoVM.getDate(for: indexPath.row)
-        cell.timeLabel.text = ufoVM.getTime(for: indexPath.row)
-        cell.speedLabel.text = ufoVM.getSpeed(for: indexPath.row)
-        cell.ufoTypeLabel.text = ufoVM.getType(for: indexPath.row).title
-        cell.ufoImageView.image = ufoVM.getImage(for: indexPath.row)
+        cell.configureCell(with: ufoVM, row: indexPath.row)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 48
+        return 56.5
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

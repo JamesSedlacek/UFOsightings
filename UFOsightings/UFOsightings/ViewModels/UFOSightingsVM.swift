@@ -19,10 +19,8 @@ class UFOSightingsVM {
         didSet {
             guard let reloadTableViewClosure = reloadTableViewClosure else { return }
             
-            strangeFlyers = ufoSightings.filter({ $0.type == UFOSightingType.Lampshade.title ||
-                $0.type == UFOSightingType.Blob.title })
-            
-            mysteriousLights = ufoSightings.filter({ $0.type == UFOSightingType.MysteriousLights.title })
+            strangeFlyers = ufoSightings.filter({ $0.type == .Lampshade || $0.type == .Blob })
+            mysteriousLights = ufoSightings.filter({ $0.type == .MysteriousLights })
             
             reloadTableViewClosure()
         }
@@ -74,21 +72,15 @@ class UFOSightingsVM {
     // MARK: Getters
     
     public func getDate(for row: Int) -> String {
-        return DateFormatting.getDate(from: ufoSightings[row].time)
+        return DateFormatting.shared.getDate(from: ufoSightings[row].time)
     }
     
     public func getTime(for row: Int) -> String {
-        return DateFormatting.getTime(from: ufoSightings[row].time)
+        return DateFormatting.shared.getTime(from: ufoSightings[row].time)
     }
     
     public func getType(for row: Int) -> UFOSightingType {
-        let typeText = currentTabSightings[row].type
-        for sighting in UFOSightingType.allCases {
-            if sighting.title == typeText {
-                return sighting
-            }
-        }
-        return .MysteriousLights // Default case
+        return currentTabSightings[row].type
     }
     
     public func getSpeed(for row: Int) -> String {
@@ -106,7 +98,7 @@ class UFOSightingsVM {
     public func appendRandom() {
         let newSighting = UFOSighting(id: UUID().uuidString,
                                       speed: Double(Int.random(in: 5..<30)),
-                                      type: currentTab == .mysteriousLights ? "mysteriousLights" : "blob",
+                                      type: currentTab == .mysteriousLights ? .MysteriousLights : .Blob,
                                       time: Double.random(in: 1643921558..<500000000000))
         ufoSightings.append(newSighting)
     }

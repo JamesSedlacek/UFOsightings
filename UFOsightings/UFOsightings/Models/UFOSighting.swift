@@ -10,12 +10,14 @@ import Foundation
 struct UFOSighting: Codable {
     let id: String // Unique identifier 
     let speed: Double // Measured in Knots
-    let type: String // (blob, lampshade, mysteriousLights)
+    let type: UFOSightingType // (blob, lampshade, mysteriousLights)
     let time: Double // timeIntervalSince1970
 }
 
-enum UFOSightingType: Int, CaseIterable {
-    case Blob = 0, Lampshade, MysteriousLights
+enum UFOSightingType: Int, CaseIterable, Codable {
+    case Blob = 0
+    case Lampshade = 1
+    case MysteriousLights = 2
     
     var title: String {
         switch self {

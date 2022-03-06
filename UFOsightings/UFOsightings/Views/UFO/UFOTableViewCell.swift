@@ -17,15 +17,11 @@ class UFOTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var ufoImageView: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func configureCell(with vm: UFOSightingsVM, row: Int) {
+        self.dateLabel.text = vm.getDate(for: row)
+        self.timeLabel.text = vm.getTime(for: row)
+        self.speedLabel.text = vm.getSpeed(for: row)
+        self.ufoTypeLabel.text = vm.getType(for: row).title
+        self.ufoImageView.image = vm.getImage(for: row)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }

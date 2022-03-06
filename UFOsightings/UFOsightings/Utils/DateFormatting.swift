@@ -8,19 +8,21 @@ import Foundation
 
 struct DateFormatting {
     
+    static var shared = DateFormatting()
+    
+    private var dateFormatter = DateFormatter()
+    
     // Milliseconds after 1970
-    static func getDate(from val: Double) -> String {
+    func getDate(from val: Double) -> String {
         let date = Date(timeIntervalSince1970: TimeInterval(val / 1000))
-        let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         dateFormatter.dateFormat = "MMMM dd, yyyy"
         return dateFormatter.string(from: date)
     }
     
     // Milliseconds after 1970
-    static func getTime(from val: Double) -> String {
+    func getTime(from val: Double) -> String {
         let date = Date(timeIntervalSince1970: TimeInterval(val / 1000))
-        let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         dateFormatter.dateFormat = "hh:mma"
         dateFormatter.amSymbol = "AM"
@@ -28,7 +30,7 @@ struct DateFormatting {
         return dateFormatter.string(from: date)
     }
     
-    static func getCurrentDateTime() -> Int {
+    func getCurrentDateTime() -> Int {
         return Int(Date().timeIntervalSince1970 * 1000)
     }
 }

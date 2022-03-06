@@ -11,19 +11,19 @@ struct NetworkingManager {
     
     private static let dummyData = [UFOSighting(id: "0",
                                                 speed: 14,
-                                                type: "blob",
+                                                type: .Blob,
                                                 time: 1483821300),
                                     UFOSighting(id: "1",
                                                 speed: 3,
-                                                type: "lampshade",
+                                                type: .Lampshade,
                                                 time: 1721721300),
                                     UFOSighting(id: "2",
                                                 speed: 21,
-                                                type: "mysteriousLights",
+                                                type: .MysteriousLights,
                                                 time: 1221331300),
                                     UFOSighting(id: "3",
                                                 speed: 17,
-                                                type: "mysteriousLights",
+                                                type: .MysteriousLights,
                                                 time: 1486655300)]
     
     static func fetchUFOSightings(completion: @escaping (Result<[UFOSighting], Error>) -> Void) {
