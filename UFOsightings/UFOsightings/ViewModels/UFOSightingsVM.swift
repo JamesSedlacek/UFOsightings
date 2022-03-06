@@ -19,10 +19,10 @@ class UFOSightingsVM {
         didSet {
             guard let reloadTableViewClosure = reloadTableViewClosure else { return }
             
-            strangeFlyers = ufoSightings.filter({ $0.type == UFOSightingType.lampshade.rawValue ||
-                $0.type == UFOSightingType.blob.rawValue })
+            strangeFlyers = ufoSightings.filter({ $0.type == UFOSightingType.Lampshade.title ||
+                $0.type == UFOSightingType.Blob.title })
             
-            mysteriousLights = ufoSightings.filter({ $0.type == UFOSightingType.mysteriousLights.rawValue })
+            mysteriousLights = ufoSightings.filter({ $0.type == UFOSightingType.MysteriousLights.title })
             
             reloadTableViewClosure()
         }
@@ -83,10 +83,12 @@ class UFOSightingsVM {
     
     public func getType(for row: Int) -> UFOSightingType {
         let typeText = currentTabSightings[row].type
-        if let type = UFOSightingType(rawValue: typeText) {
-            return type
+        for sighting in UFOSightingType.allCases {
+            if sighting.title == typeText {
+                return sighting
+            }
         }
-        return .mysteriousLights
+        return .MysteriousLights // Default case
     }
     
     public func getSpeed(for row: Int) -> String {
@@ -95,18 +97,8 @@ class UFOSightingsVM {
     
     public func getImage(for row: Int) -> UIImage {
         let defaultImage = UIImage()
-        var image = defaultImage
-        
-        switch getType(for: row) {
-        case .blob:
-            image = UIImage(systemName: "circle.fill") ?? defaultImage
-        case .lampshade:
-            image = UIImage(systemName: "square.fill") ?? defaultImage
-        case .mysteriousLights:
-            image = UIImage(systemName: "diamond.fill") ?? defaultImage
-        }
-        
-        return image
+        let imageName = getType(for: row).imageName
+        return UIImage(systemName: imageName) ?? defaultImage
     }
     
     // MARK: Append

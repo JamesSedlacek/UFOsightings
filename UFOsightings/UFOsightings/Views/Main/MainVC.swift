@@ -82,7 +82,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         cell.dateLabel.text = ufoVM.getDate(for: indexPath.row)
         cell.timeLabel.text = ufoVM.getTime(for: indexPath.row)
         cell.speedLabel.text = ufoVM.getSpeed(for: indexPath.row)
-        cell.ufoTypeLabel.text = ufoVM.getType(for: indexPath.row).rawValue
+        cell.ufoTypeLabel.text = ufoVM.getType(for: indexPath.row).title
         cell.ufoImageView.image = ufoVM.getImage(for: indexPath.row)
         
         return cell

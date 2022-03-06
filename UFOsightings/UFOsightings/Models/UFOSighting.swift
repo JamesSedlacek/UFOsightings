@@ -14,8 +14,22 @@ struct UFOSighting: Codable {
     let time: Int // timeIntervalSince1970
 }
 
-enum UFOSightingType: String {
-    case blob = "blob"
-    case lampshade = "lampshade"
-    case mysteriousLights = "mysteriousLights"
+enum UFOSightingType: Int, CaseIterable {
+    case Blob = 0, Lampshade, MysteriousLights
+    
+    var title: String {
+        switch self {
+        case .Blob: return "blob"
+        case .Lampshade: return "lampshade"
+        case .MysteriousLights: return "mysteriousLights"
+        }
+    }
+    
+    var imageName: String {
+        switch self {
+        case .Blob: return "circle.fill"
+        case .Lampshade: return "square.fill"
+        case .MysteriousLights: return "diamond.fill"
+        }
+    }
 }
