@@ -21,7 +21,6 @@ class MainVC: UIViewController {
     // MARK: Properties
     
     private var ufoVM = UFOSightingsVM()
-    private let nibIdentifier = "UFOTableViewCell"
     
     // MARK: Outlets
     
@@ -50,9 +49,10 @@ class MainVC: UIViewController {
     // MARK: Setup
     
     private func setupTableView() {
-        tableView.dataSource = ufoVM
+        let nibIdentifier = "UFOTableViewCell"
         tableView.register(UINib(nibName: nibIdentifier, bundle: nil),
                            forCellReuseIdentifier: nibIdentifier)
+        tableView.dataSource = ufoVM
     }
     
     private func setupVM() {
