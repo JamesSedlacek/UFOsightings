@@ -50,8 +50,7 @@ class MainVC: UIViewController {
     // MARK: Setup
     
     private func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableView.dataSource = ufoVM
         tableView.register(UINib(nibName: nibIdentifier, bundle: nil),
                            forCellReuseIdentifier: nibIdentifier)
     }
@@ -64,39 +63,5 @@ class MainVC: UIViewController {
         }
         
         ufoVM.fetchSightings()
-    }
-}
-
-// MARK: TableView
-
-extension MainVC: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ufoVM.numberOfRows
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: nibIdentifier, for: indexPath) as? UFOTableViewCell else {
-            return UITableViewCell()
-        }
-        
-        cell.configureCell(with: ufoVM, row: indexPath.row)
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 56.5
-    }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            ufoVM.delete(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-        }
     }
 }

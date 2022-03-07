@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UFOSightingsVM {
+class UFOSightingsVM: NSObject {
     
     // MARK: Properties
     
@@ -35,17 +35,7 @@ class UFOSightingsVM {
         }
     }
     
-    public var numberOfRows: Int {
-        return currentTabSightings.count
-    }
-    
     public var reloadTableViewClosure: (()->())?
-    
-    // MARK: Initializers
-    
-    init() {
-        
-    }
     
     // MARK: Update Tab
     
@@ -109,6 +99,37 @@ class UFOSightingsVM {
         let id = currentTabSightings[row].id
         if let index = ufoSightings.firstIndex(where: { $0.id == id }) {
             ufoSightings.remove(at: index)
+        }
+    }
+}
+
+// MARK: TableView DataSource
+
+extension UFOSightingsVM: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return currentTabSightings.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let nibIdentifier = "UFOTableViewCell"
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: nibIdentifier, for: indexPath) as? UFOTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        cell.configureCell(with: self, row: indexPath.row)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            delete(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
 }
